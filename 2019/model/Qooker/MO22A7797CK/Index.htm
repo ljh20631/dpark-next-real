@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang="ko" data-key="top-page" data-language="Korean" dir="ltr">
+
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- css -->
+    <link rel="stylesheet" href="./common/fonts/samsungOneKorea/fonts.css">
+    <link rel="stylesheet" href="./common/lib/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./common/css/common.css">
+    <link rel="stylesheet" href="./css/start.css">
+    <!-- js -->
+    <script src="./common/js/jquery.js"></script>
+    <script src="./common/lib/jQuery/jquery-1.12.4.min.js"></script>
+    <script src="./common/lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+    <script src="./common/lib/cookie/jquery.cookie.js"></script>
+    <script src="./js/ui_text.js"></script>
+</head>
+
+<body id="body">
+    <div id="wrap">
+        <!-- header -->
+        <header id="header">
+            <div class="wrap">
+                <div class="container">
+                    <div class="header_top">
+                        <div class="mob_nav">
+                            <a href="javascript:void(0);" class="nav_btn close">
+                                <i class="top_line"></i>
+                                <i class="mid_line"></i>
+                                <i class="bot_line"></i>
+                            </a>
+                        </div>
+                        <div id="home" class="home">
+                            <a class="home_btn" href="./Index.htm">
+                                <img src="./common/img/home.png" alt="home">
+                            </a>
+                        </div>
+                        <div class="search_box">
+                            <div class="search_wrap">
+                                <input type="text" id="id_search_page" placeholder="search" />
+                                <button type="button" class="search_btn" id="id_search_button_page">
+                                    <img src="./common/img/search_btn.png" alt="search">
+                                </button>
+                            </div>
+                        </div>
+                        <!-- <div class="mob_swipe">
+                            <a href="javascript:void(0);" class="swipe_prev">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a href="javascript:void(0);" class="swipe_next">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </div> -->
+                        <!-- <div id="language" class="language">
+                            <button type="button" class="language_btn" data-target="#selectLanguage">
+                                <span class="selected_lang">language</span>
+                            </button>
+                        </div> -->
+                    </div>
+                    <div class="header_bottom">
+                        <!-- nav -->
+                        <nav id="nav">
+                            <ul class="nav_list">
+
+                                <li class="main_menu">
+                                    <a href="javascript:void(0);" class="main_btn">주의하기<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <ul class="sub_menu">
+                                        <li><a href="#heading2_특장점" class="sub_btn">특장점</a></li>
+                                        <li><a href="#heading2_안전을위한주의사항" class="sub_btn">안전을 위한 주의 사항</a></li>
+                                        <li><a href="#heading2_전원관련" class="sub_btn">전원 관련</a></li>
+                                        <li><a href="#heading2_설치관련" class="sub_btn">설치 관련</a></li>
+                                        <li><a href="#heading2_사용관련" class="sub_btn">사용 관련</a></li>
+                                        <li><a href="#heading2_청소관련" class="sub_btn">청소 관련</a></li>
+                                        <li><a href="#heading2_소비자안전점검" class="sub_btn">오래 사용한 오븐의 소비자 안전점검</a></li>
+                                    </ul>
+                                </li>
+                                <li class="main_menu">
+                                    <a href="javascript:void(0);" class="main_btn">살펴보기<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <ul class="sub_menu">
+                                        <li><a href="#heading2_각부의명칭" class="sub_btn">각 부의 명칭</a></li>
+                                        <li><a href="#heading2_부속품과사용방법" class="sub_btn">부속품과 사용방법</a></li>
+                                    </ul>
+                                </li>
+                                <li class="main_menu">
+                                    <a href="javascript:void(0);" class="main_btn">설치하기<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <ul class="sub_menu">
+                                        <li><a href="#heading2_설치전알아두기" class="sub_btn">설치 전 알아두기</a></li>
+                                        <li><a href="#heading2_접지하기" class="sub_btn">접지하기</a></li>
+                                        <li><a href="#heading2_초기설정" class="sub_btn">초기 설정</a></li>
+                                        <li><a href="#heading2_절전모드" class="sub_btn">절전 모드 진입 시간 설정</a></li>
+                                        <li><a href="#heading2_최초동작시" class="sub_btn">최초 동작 시 연기나 탄 냄새가 날 경우</a></li>
+                                        <li><a href="#heading2_스마트안전기능" class="sub_btn">스마트 안전 기능</a></li>
+                                        <li><a href="#heading2_자동냉각" class="sub_btn">자동냉각 기능</a></li>
+                                        <li><a href="#heading2_선반" class="sub_btn">선반</a></li>
+                                        <li><a href="#heading2_사용가능한용기" class="sub_btn">사용 가능한 용기 알아두기</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="main_menu">
+                                    <a href="javascript:void(0);" class="main_btn">버튼과 표시부<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <ul class="sub_menu">
+                                        <li><a href="#heading2_조작부" class="sub_btn">조작부</a></li>
+                                        <li><a href="#heading2_디스플레이" class="sub_btn">디스플레이</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="main_menu">
+                                    <a href="javascript:void(0);" class="main_btn">사용하기<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <ul class="sub_menu">
+                                        <li><a href="#heading2_오븐모드" class="sub_btn">오븐 모드</a></li>
+                                        <li><a href="#heading2_전자레인지모드" class="sub_btn">전자레인지 모드</a></li>
+                                        <li><a href="#heading2_자동조리" class="sub_btn">자동조리</a></li>
+                                        <li><a href="#heading2_자동해동" class="sub_btn">자동해동</a></li>
+                                        <li><a href="#heading2_스페셜기능" class="sub_btn">스폐셜 기능</a></li>
+                                        <li><a href="#heading2_내가만든레시피" class="sub_btn">내가 만든 레시피</a></li>
+                                        <li><a href="#heading2_타이머" class="sub_btn">타이머</a></li>
+                                        <li><a href="#heading2_청소기능" class="sub_btn">청소 기능</a></li>
+                                        <li><a href="#heading2_청소하기" class="sub_btn">청소하기</a></li>
+                                        <li><a href="#heading2_설정" class="sub_btn">설정</a></li>
+                                        <li><a href="#heading2_어린이보호기능" class="sub_btn">어린이 보호 기능</a></li>
+                                        <li><a href="#heading2_자동조리2" class="sub_btn">자동조리</a></li>
+                                        <li><a href="#heading2_자동해동" class="sub_btn">자동해동</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="main_menu">
+                                    <a href="javascript:void(0);" class="main_btn">스마트 기능 사용하기<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <ul class="sub_menu">
+                                        <li><a href="#heading2_설치하기" class="sub_btn">설치하기</a></li>
+                                        <li><a href="#heading2_삼성계정" class="sub_btn">삼성 계정</a></li>
+                                        <li><a href="#heading2_스마트원격컨트롤" class="sub_btn">스마트 원격 컨트롤</a></li>
+                                        <li><a href="#heading2_보이스컨트롤" class="sub_btn">보이스 컨트롤</a></li>
+                                        <li><a href="#heading2_모바일조리사용방법" class="sub_btn">모바일 조리 사용 방법</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="main_menu">
+                                    <a href="javascript:void(0);" class="main_btn">문제해결<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <ul class="sub_menu">
+                                        <li><a href="#heading2_공통" class="sub_btn">공통</a></li>
+                                        <li><a href="#heading2_그릴" class="sub_btn">그릴</a></li>
+                                        <li><a href="#heading2_오븐" class="sub_btn">오븐</a></li>
+                                        <li><a href="#heading2_자가진단" class="sub_btn">자가진단 표시</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="main_menu">
+                                    <a href="javascript:void(0);" class="main_btn">제품규격<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <ul class="sub_menu">
+                                        <li><a href="#heading2_제품규격" class="sub_btn">제품규격</a></li>
+                                    </ul>
+                                </li>
+                                <li class="main_menu">
+                                    <a href="javascript:void(0);" class="main_btn">부록<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <ul class="sub_menu">
+                                        <li><a href="#heading2_폐전자" class="sub_btn">폐 전자제품 처리안내</a></li>
+                                        <li><a href="#heading2_오픈소스" class="sub_btn">Open Source Announcement</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!-- //nav -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- //header -->
+
+        <!-- main -->
+        <main id="main" data-next="content1.html">
+            <section id="mainSection">
+                <div class="wrap">
+                    <div class="container">
+                        <div class="content">
+                            <div class="main_bg"></div>
+                            <div class="main_content">
+                                <div class="cont_wrap">
+                                    <div class="txt_wrap">
+                                        <h1>스탠드형 에어컨</h1>
+                                        <h2>사용 설명서</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="swipe_btn">
+                <a href="javascript:void(0);" class="swipe_prev">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <a href="javascript:void(0);" class="swipe_next">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+        </main>
+        <!-- //main -->
+
+        <!-- footer -->
+        <footer id="footer">
+            <div class="wrap">
+                <div class="container">
+                    <div id="goTop">
+                        <a href="#body" class="top_btn">
+                            <i class="fa fa-angle-up" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- //footer -->
+
+        <!-- modal -->
+        <!-- <div id="selectLanguage" class="modal">
+            <div class="modal_bg"></div>
+            <div class="modal_wrap">
+                <div class="modal_container">
+                    <div class="modal_header">
+                        <h4 class="modal_title">Select Language</h4>
+                        <button type="button" class="close_btn">
+                            <i class="line"></i>
+                            <i class="line"></i>
+                        </button>
+                    </div>
+                    <div class="modal_body">
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- //modal -->
+    </div>
+
+    <!-- js -->
+    <script src="./common/js/common.js"></script>
+    <script src="./common/js/contents.js"></script>
+</body>
+
+</html>
