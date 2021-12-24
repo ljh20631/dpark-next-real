@@ -344,6 +344,9 @@ h4.shap-target2 {
 	padding-top: 70px;
 	margin-bottom: -60px !important;
 }
+.container section{
+	margin-top: 20px;
+}
 .container section p {
 	font-size: 18px;
 }
