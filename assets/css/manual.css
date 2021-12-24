@@ -3,8 +3,13 @@ html, body {
 	height: 100%;
 }
 body {
-	padding: 84px 0 0 0;
+	padding: 80px 0 0 0;
 	font-family: NanumGothic;
+  
+}
+
+#body-app .container-fluid{
+  padding: 0;
 }
 
 .navbar{
@@ -257,44 +262,44 @@ left: 50%;
 }
 
 
-.container td {
+#body-app td {
 	font-size: 18px;
 }
 
-.container b {
+#body-app b {
 	color: #1b7b6f;
 } /*<b> 태그 color*/
 
-.container .b-b {
+#body-app .b-b {
 	color:#000;
 }
 
-.container li {
+#body-app li {
   font-size: 18px;
 }
 
-.container ol {
+#body-app ol {
 	margin-left: 15px;
 }
 
-.container ol li {
+#body-app ol li {
 	font-size: 18px;
 }
 
-.container ul li {
+#body-app ul li {
 	list-style: inside;
 	font-size: 18px;
 }
 
-.container p {
+#body-app p {
 	font-size: 18px;
 }
 
-.container h2 {
+#body-app h2 {
 	font-size: 25px;
 }
 
-.container h4 p {
+#body-app h4 p {
 	font-size: 18px;
 }
 
@@ -344,26 +349,26 @@ h4.shap-target2 {
 	padding-top: 70px;
 	margin-bottom: -60px !important;
 }
-.container section{
+#body-app section{
 	margin-top: 20px;
 }
-.container section p {
+#body-app section p {
 	font-size: 18px;
 }
-.container section p img.width100 {
+#body-app section p img.width100 {
 	width: 100%;
 }
 @media (max-width: 768px) {
-.container section p img.width100 {
+#body-app section p img.width100 {
 	width: 100%;
 }
 }
-.container section h2 {
+#body-app section h2 {
 	font-weight: bolder;
 	color: #00adec;
 	margin-bottom: 40px;
 }
-.container section > article > h4.shap-target {
+#body-app section > article > h4.shap-target {
 	font-weight: bolder;
 	color: #000000;
 	font-size: 20px;
@@ -372,28 +377,29 @@ h4.shap-target2 {
 	padding-bottom: 8px;
 	margin-top: 40px;
 }
-.container section > article > h4.shap-target2 {
+#body-app section > article > h4.shap-target2 {
 	font-weight: bolder;
 	color: #1b7b6f;
     margin-bottom: 40px;
     padding-bottom: 70px;
 	font-size: 25px;
 }
-.container section h4.info {
+#body-app section h4.info {
 	font-weight: bolder;
 	color: #333;
 	border-bottom: none;
 	margin-bottom: 5px;
 	margin-top: 40px;
 }
-.container section h4.success {
+#body-app section h4.success {
 	font-weight: bolder;
 	color: #333;
 	border-bottom: none;
 	margin-bottom: 5px;
 	margin-top: 40px;
 }
-.container section div table thead tr th, .container section div table tbody tr td {
+#body-app section div table thead tr th, 
+#body-app section div table tbody tr td {
 	vertical-align: middle;
 }
 .table-icon tbody tr th {
@@ -419,27 +425,27 @@ tbody tr td {
 	}
 
 
-.container section .alert .icon {
+#body-app section .alert .icon {
 	margin-top: 0px;
 }
-.container section .alert .icon p {
+#body-app section .alert .icon p {
 	margin-top: 20px;
 }
  @media (max-width: 768px) {
-.container section .alert .icon p {
+#body-app section .alert .icon p {
 	margin-top: 10px;
 }
 }
-.container section .line-normal {
+#body-app section .line-normal {
 	line-height: normal;
 }
-.container ol {
+#body-app ol {
 	font-size: 18px;
 }
 ol, ul {
 	padding-left: 10px;
 }
-.container ul {
+#body-app ul {
 	font-size: 15px;
 }
 .top-5 {
@@ -501,7 +507,7 @@ section .alert ul {
 	border-bottom: 1px solid #aaabab;	
 	padding: 15px;
 }
-.container section p img.img-fluid {
+#body-app section p img.img-fluid {
 	width: 100%;
 }
 
@@ -787,22 +793,30 @@ ul.search-result > li.search-item > span > a > p.search-text::after {
     background: #8cd3f5;
 }
 
-#mainSection {
-	margin-top: -84px;
+@media (min-width:768px) {
+  #mainSection {
+    margin-top: -80px !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #mainSection {
+    margin-top: -80px !important;
+  }
 }
 
 #mainSection .wrap {
     max-width: 100%;
 }
 
-#mainSection .container {
+#mainSection #body-app {
     padding: 0;
 }
 
 #mainSection .content {
     width: 100%;
-    height: calc(100vh - 84px);
-    margin-top: 84px;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
 }
 
 @media all and (max-width: 1024px) {
@@ -814,8 +828,8 @@ ul.search-result > li.search-item > span > a > p.search-text::after {
 
 @media all and (max-width: 540px) {
     #mainSection .content {
-        height: calc(100vh - 96px);
-        margin-top: 96px;
+        height: calc(100vh - 80px);
+        margin-top: 80px;
     }
     .main_content .cont_wrap {
         width: calc(100% - 60px);
@@ -847,8 +861,8 @@ ul.search-result > li.search-item > span > a > p.search-text::after {
 
 @media all and (max-width: 540px) {
     #mainSection .content {
-        height: calc(100vh - 96px);
-        margin-top: 96px;
+        height: calc(100vh - 80px);
+        margin-top: 80px;
     }
     .main_content .cont_wrap {
         width: calc(100% - 60px);

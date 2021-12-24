@@ -48,7 +48,9 @@ var headerApp = new Vue({
     }
 
     window.setTimeout(function(){
-      window.setSectionMaxHeight();
+      window.setSectionSize();
+
+      window.initSwipe();
     }, 100);    
   },
   methods: {    
@@ -209,32 +211,42 @@ var headerApp = new Vue({
   }
 });
 
-let sliderContainer = document.getElementById('slider-container');
-let prevBtn = document.getElementById('slider-prev');
-let nextBtn = document.getElementById('slider-next');
+window.initSwipe = function(){
+  let sliderContainer = document.getElementById('slider-container');
+  let prevBtn = document.getElementById('slider-prev');
+  let nextBtn = document.getElementById('slider-next');
+  
+  window.topMargin = -105;
+  
+  window.swiper = new Swipe(sliderContainer, {
+    draggable: true,
+    autoRestart: false,
+    continuous: false,
+    disableScroll: true,
+    stopPropagation: true,
+    callback: function(index, element) {
+      console.log(index, element);
+    },
+    transitionEnd: function(index, element) {
+      headerApp.currentSection = index;
+  
+      window.setSectionSize();
+  
+      if(window.articleIndex >= 0){
+        window.goArticle(element, window.articleIndex);
+      }
+  
+      window.articleIndex = undefined;
 
-window.topMargin = -105;
-
-window.swiper = new Swipe(sliderContainer, {
-  draggable: true,
-  autoRestart: false,
-  continuous: false,
-  disableScroll: true,
-  stopPropagation: true,
-  callback: function(index, element) {
-  },
-  transitionEnd: function(index, element) {
-    headerApp.currentSection = index;
-
-    window.setSectionMaxHeight();
-
-    if(window.articleIndex >= 0){
-      window.goArticle(element, window.articleIndex);
+      window.swiper.setup();
     }
+  });
+  
+  prevBtn.onclick = swiper.prev;
+  nextBtn.onclick = swiper.next;
 
-    window.articleIndex = undefined;
-  }
-});
+  window.swiper.setup();
+}
 
 window.goSection = function(sectionIndex, articleIndex){
   if(articleIndex == undefined){
@@ -260,7 +272,14 @@ window.goArticle = function(parent, index){
   window.scrollTo({top: y, behavior: 'smooth'});
 }
 
-window.setSectionMaxHeight = function(){
+window.setSectionSize = function(){
+  let bodyContainer = document.querySelector("#body-container");
+  if(headerApp.currentSection == 0){
+    bodyContainer.classList.remove("container");
+  }else{
+    bodyContainer.classList.add("container");
+  }
+
   let sectionAll = document.querySelectorAll("section");
   for(let i = 0; i < sectionAll.length; i++){
     let section = sectionAll[i];
@@ -271,6 +290,3 @@ window.setSectionMaxHeight = function(){
     }
   }
 }
-
-prevBtn.onclick = swiper.prev;
-nextBtn.onclick = swiper.next;
