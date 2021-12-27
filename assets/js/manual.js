@@ -5,6 +5,7 @@ var headerApp = new Vue({
     searchResultIndex: [],
     searchResult: [],
     resultShow: false,
+    noResultShow: false,
     articleList: [],
     paragraphList: [],
     currentSection: 0
@@ -57,6 +58,16 @@ var headerApp = new Vue({
     inputChange: function(e){
       this.searchKeyword = e.target.value;
       this.search();
+    },
+    searchClick: function(){
+      this.search();
+      if(this.searchResult.length <= 0){
+        this.noResultShow = true;
+      }
+    },
+    noResultClose: function(){
+      this.noResultShow = false;
+      this.goElement(null, 0, 0);
     },
     search: function() {
       let resultIndex = [];
@@ -169,7 +180,9 @@ var headerApp = new Vue({
 
       let $this = this;
       this.$nextTick(() => {
-        window.goSection(sectionIndex, articleIndex);
+        window.setTimeout(function(){
+          window.goSection(sectionIndex, articleIndex);
+        }, 100);        
       });
     },
     getNavSectionClass(index){
@@ -231,7 +244,7 @@ window.initSwipe = function(){
       headerApp.currentSection = index;
   
       window.setSectionSize();
-  
+
       if(window.articleIndex >= 0){
         window.goArticle(element, window.articleIndex);
       }
@@ -250,14 +263,14 @@ window.initSwipe = function(){
 
 window.goSection = function(sectionIndex, articleIndex){
   if(articleIndex == undefined){
-    window.swiper.slide(sectionIndex);
+    window.swiper.slide(sectionIndex, undefined, true);
     return;
   }
 
   let curSectionIndex = window.swiper.getPos();
   if(curSectionIndex != sectionIndex){
     window.articleIndex = articleIndex;
-    window.swiper.slide(sectionIndex);
+    window.swiper.slide(sectionIndex, undefined, true);
   }else{
     let sectionEl = document.querySelector("section:nth-of-type(" + (sectionIndex + 1) + ")");
     window.goArticle(sectionEl, articleIndex);
@@ -266,6 +279,10 @@ window.goSection = function(sectionIndex, articleIndex){
 
 window.goArticle = function(parent, index){
   let el = parent.querySelector("article:nth-of-type(" + (index + 1) + ")");
+  if(!el){
+    window.scrollTo(0,0);
+    return;
+  }
 
   const y = el.getBoundingClientRect().top + window.pageYOffset + window.topMargin;
 
@@ -280,6 +297,10 @@ window.setSectionSize = function(){
     bodyContainer.classList.add("container");
   }
 
+  window.setMaxHeight();
+}
+
+window.setMaxHeight = function(){
   let sectionAll = document.querySelectorAll("section");
   for(let i = 0; i < sectionAll.length; i++){
     let section = sectionAll[i];

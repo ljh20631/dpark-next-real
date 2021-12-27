@@ -97,6 +97,11 @@ body {
 }
 
 @media (max-width: 767.98px) {
+	.container section{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
 	.navbar > .container-fluid > .navbar-collapse{
 		background-color: #337ab7;
 		position: fixed;
@@ -883,3 +888,47 @@ ul.search-result > li.search-item > span > a > p.search-text::after {
   display: block;
   margin-top: 0;
 } */
+
+.no-modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 200px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+}
+
+.no-modal-content {
+	font-size: 12px;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 10px;
+	padding-bottom: 33px;
+  border: 1px solid #888;
+  width: 270px;
+	border-radius: 7px;
+}
+
+.no-modal-content p {
+	margin-bottom: 0;
+}
+
+.no-close {
+  color: #aaaaaa;
+  float: right;
+  font-weight: bold;
+	color: rgb(40, 97, 255);
+	margin-top: 7px;
+	margin-right: 5px;
+}
+
+.no-close:hover,
+.no-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

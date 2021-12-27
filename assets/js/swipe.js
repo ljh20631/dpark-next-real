@@ -371,6 +371,8 @@
               index = circle(index-1);
             }
 
+            window.scrollTo(0,0);
+
             runCallback(getPos(), slides[index], direction);
 
           } else {
@@ -424,9 +426,9 @@
       setup: setup,
 
       // go to slide
-      slide: function(to, speed) {
+      slide: function(to, speed, byCode) {
         stop();
-        slide(to, speed);
+        slide(to, speed, byCode);
       },
 
       // move to previous
@@ -658,7 +660,9 @@
       return currentIndex;
     }
 
-    function slide(to, slideSpeed) {
+    function slide(to, slideSpeed, byCode) {
+      if(!byCode)
+        window.scrollTo(0,0);
 
       // ensure to is of type 'number'
       to = typeof to !== 'number' ? parseInt(to, 10) : to;
