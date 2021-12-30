@@ -565,6 +565,8 @@
 
       // determine width of each slide
       width = container.getBoundingClientRect().width || container.offsetWidth;
+      if(width <= 0)
+        return;
 
       element.style.width = (slides.length * width * 2) + 'px';
 
