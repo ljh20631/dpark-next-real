@@ -12,14 +12,14 @@ var headerApp = new Vue({
   },
   mounted: function(){
     let sections = document.querySelectorAll('section');
-    for (i = 0; i < sections.length; ++i) {
+    for (let i = 0; i < sections.length; ++i) {
       let s = sections[i];
-      let sectionText = this.refineText(s.querySelector('h2')?.textContent);
+      let sectionText = this.refineText(s.querySelector('h2').textContent);
     
       let articles = s.querySelectorAll('article');
-      for (j = 0; j < articles.length; j++){
+      for (let j = 0; j < articles.length; j++){
         let a = articles[j];
-        let articleText = this.refineText(a.querySelector('h4')?.textContent);
+        let articleText = this.refineText(a.querySelector('h4').textContent);
 
         this.articleList.push({
           sectionIndex: i,
@@ -30,7 +30,7 @@ var headerApp = new Vue({
         });
     
         let paragraphs = a.querySelectorAll('p,li');
-        for (k = 0; k < paragraphs.length; k++){
+        for (let k = 0; k < paragraphs.length; k++){
           let p = paragraphs[k];
           let paragraphText = this.refineText(p.textContent);
     
@@ -85,7 +85,7 @@ var headerApp = new Vue({
         return;
       }
 
-      for( i = 0; i < this.articleList.length; i++){
+      for(let i = 0; i < this.articleList.length; i++){
         let item = this.articleList[i];
 
         let index = item.articleText.toLowerCase().indexOf(keyword);
@@ -110,7 +110,7 @@ var headerApp = new Vue({
 
       this.searchResultIndex = resultIndex;
 
-      for (i = 0; i < this.paragraphList.length; i++){
+      for (let i = 0; i < this.paragraphList.length; i++){
         let item = this.paragraphList[i];
 
         if(lastArticleIndex == item.articleIndex)
