@@ -5,14 +5,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>
-    function isIE(){
-      return window.MSInputMethodContext && document.documentMode;
-    }
-    
-    if(isIE())
-      document.write('<link rel="stylesheet" href="../../../../assets/css//bootstrap-ie11.min.css"><script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"><\/script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"><\/script><script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\/script><script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"><\/script><script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js"><\/script>');
-  </script>
 
   <link rel="stylesheet" href="../../../../assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="../../../../assets/css/bootstrap-icons.css">
@@ -20,10 +12,22 @@
   <link rel="stylesheet" href="../../../../assets/css/manual.css" />
 
   <script>
-    if(isIE())
-      document.write('<script src="../../../../assets/js/vue.min.js" type="text/babel"><\/script>');
-    else
+    function isIE(){
+      return window.MSInputMethodContext && document.documentMode;
+    }
+  </script>
+<script>
+    if(isIE()){
+      document.write('<link rel="stylesheet" href="../../../../assets/css//bootstrap-ie11.min.css">');
+      document.write('<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"><\/script>');
+      document.write('<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"><\/script>');
+      document.write('<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\/script>');
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"><\/script>');
+      document.write('<script src="https://polyfill.io/v3/polyfill.min.js?version=3.109.0"><\/script>');
+      document.write('<script src="../../../../assets/js/vue-ie11.js"><\/script>');
+    } else {
       document.write('<script src="../../../../assets/js/vue.min.js"><\/script>');
+    }
   </script>  
   
 
@@ -3620,10 +3624,13 @@
 
   <script src="../../../../assets/js/swipe.js"></script>
   <script>
-    if(isIE())
-      document.write('<script src="../../../../assets/js/bootstrap.min.js" type="text/babel"><\/script> <script src="../../../../assets/js/manual.js" type="text/babel"><\/script>');
-    else
-    document.write('<script src="../../../../assets/js/bootstrap.min.js" ><\/script> <script src="../../../../assets/js/manual.js" ><\/script>');
+    if (isIE()) {
+      document.write('<script src="../../../../assets/js/bootstrap-ie11.js"><\/script>');
+      document.write('<script src="../../../../assets/js/manual.js" type="text/babel"><\/script>');
+    } else {
+      document.write('<script src="../../../../assets/js/bootstrap.min.js" >');
+      document.write('<script src="../../../../assets/js/manual.js" ><\/script>');
+    }
   </script>  
 
 </body>
