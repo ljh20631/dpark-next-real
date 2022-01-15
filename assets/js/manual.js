@@ -280,13 +280,22 @@ window.goSection = function(sectionIndex, articleIndex){
 window.goArticle = function(parent, index){
   let el = parent.querySelector("article:nth-of-type(" + (index + 1) + ")");
   if(!el){
-    window.scrollTo(0,0);
+    if(isIE()){
+      document.documentElement.scrollTop = 0;
+    }else{
+      window.scrollTo(0,0);
+    }
+
     return;
   }
 
   const y = el.getBoundingClientRect().top + window.pageYOffset + window.topMargin;
 
-  window.scrollTo({top: y, behavior: 'smooth'});
+  if(isIE()){
+    document.documentElement.scrollTop = y;
+  }else{
+    window.scrollTo({top: y, behavior: 'smooth'});
+  }  
 }
 
 window.setSectionSize = function(){

@@ -10,18 +10,18 @@
   <link rel="stylesheet" href="../../../../assets/css/bootstrap-icons.css">
   <link rel="stylesheet" href="../../../../assets/css/swipe.css" />
   <link rel="stylesheet" href="../../../../assets/css/manual.css" />
+  <link rel="stylesheet" href="../../../../assets/css//bootstrap-ie11.min.css">
 
   <script>
     function isIE(){
       return window.MSInputMethodContext && document.documentMode;
     }
   </script>
-<script>
+  <script nomodule crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=default%2CNumber.parseInt%2CNumber.parseFloat%2CArray.prototype.find%2CArray.prototype.includes"></script>
+  <script nomodule>window.MSInputMethodContext && document.documentMode && document.write('<script src="https://cdn.jsdelivr.net/combine/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js,npm/ie11-custom-properties@4,npm/element-qsa-scope@1"><\/script>');</script>
+
+  <script>
     if(isIE()){
-      document.write('<link rel="stylesheet" href="../../../../assets/css//bootstrap-ie11.min.css">');
-      document.write('<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"><\/script>');
-      document.write('<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"><\/script>');
-      document.write('<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\/script>');
       document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"><\/script>');
       document.write('<script src="https://polyfill.io/v3/polyfill.min.js?version=3.109.0"><\/script>');
       document.write('<script src="../../../../assets/js/vue-ie11.js"><\/script>');
@@ -3625,10 +3625,10 @@
   <script src="../../../../assets/js/swipe.js"></script>
   <script>
     if (isIE()) {
-      document.write('<script src="../../../../assets/js/bootstrap-ie11.js"><\/script>');
+      document.write('<script src="../../../../assets/js/bootstrap.js"><\/script>');
       document.write('<script src="../../../../assets/js/manual.js" type="text/babel"><\/script>');
     } else {
-      document.write('<script src="../../../../assets/js/bootstrap.min.js" >');
+      document.write('<script src="../../../../assets/js/bootstrap.min.js"><\/script>');
       document.write('<script src="../../../../assets/js/manual.js" ><\/script>');
     }
   </script>  
