@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="../../../../assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="../../../../assets/css/bootstrap-icons.css">
   <link rel="stylesheet" href="../../../../assets/css/swipe.css" />
-  <link rel="stylesheet" href="../../../../assets/css/manual.css" />
   <link rel="stylesheet" href="../../../../assets/css//bootstrap-ie11.min.css">
+  <link rel="stylesheet" href="../../../../assets/css/manual.css" />
 
   <script>
     function isIE(){
@@ -38,7 +38,7 @@
   <div id="app">
 
     <div id="header-app">
-      <div v-if="noResultShow" class="no-modal">
+      <div v-if="noResultShow" class="no-modal" v-cloak>
         <div class="no-modal-content">
           <p>검색결과가 없습니다<br />닫기 버튼을 누르면 메인 페이지로 이동합니다.</p>
           <span class="no-close" @click="noResultClose">닫기</span>
@@ -282,7 +282,7 @@
       <!--/header -->
 
       <!-- search list -->
-      <div v-if="resultShow">
+      <div v-if="resultShow" v-cloak>
         <div v-if="searchResultIndex.length" class="search-result-index-subject">
           Index result
         </div>

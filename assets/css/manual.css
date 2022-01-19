@@ -9,7 +9,7 @@ body {
 }
 
 #body-app .container-fluid{
-  padding: 0;
+  padding: 0px !important;
 }
 
 .navbar{
@@ -889,6 +889,10 @@ ul.search-result > li.search-item > span > a > p.search-text::after {
   margin-top: 0;
 } */
 
+[v-cloak] {
+	display: none;
+}
+
 .no-modal {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -931,4 +935,19 @@ ul.search-result > li.search-item > span > a > p.search-text::after {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.search-result-container{
+	display: none;;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.navbar .container-fluid{
+		justify-content: flex-start !important;
+	}
+
+	.search-container > input{
+		border: none;
+		line-height: normal;
+	}
 }
