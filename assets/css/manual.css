@@ -8,6 +8,16 @@ body {
   
 }
 
+.body_indent {
+	text-indent: -1.05em;
+	margin-left:1em;
+}
+
+.body_indent2 {
+	text-indent: -2.6em;
+	margin-left: 2.6em;
+}
+
 #body-app .container-fluid{
   padding: 0px !important;
 }
@@ -292,7 +302,6 @@ left: 50%;
 }
 
 #body-app ul li {
-	list-style: inside;
 	font-size: 18px;
 }
 
@@ -485,7 +494,6 @@ section .alert ul {
 .circle {
 	border-radius: 50%;
 	width: 25px;
-	height: 25px;
 	padding: 2px;
 	background: #000000;
 	color: #fff;
@@ -535,7 +543,14 @@ section .alert ul {
 	border: 1px solid #999;
 	border-radius: 3px;
 }
+
 ul.indent li {
+	list-style-position: outside;
+	margin-left:1em;
+}
+
+ol ul.indent li {
+	list-style: disc;
 	list-style-position: outside;
 	margin-left:1em;
 }
@@ -950,4 +965,25 @@ ul.search-result > li.search-item > span > a > p.search-text::after {
 		border: none;
 		line-height: normal;
 	}
+}
+
+.go-top{
+	z-index: 9999;
+	cursor: pointer;
+	position: fixed;
+	right: 10px;
+	text-decoration: none;
+	bottom: 10px;
+
+	height: 35px;
+  width: 35px;
+  background-color: #00ADEC;
+	color: #fff;
+  border-radius: 50%;
+  display: none;
+
+	padding-left: 12px;
+	padding-top: 8px;
+	font-size: 12px;
+	font-weight: bolder;
 }

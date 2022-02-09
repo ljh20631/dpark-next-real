@@ -291,6 +291,10 @@ window.goArticle = function(parent, index){
 
   const y = el.getBoundingClientRect().top + window.pageYOffset + window.topMargin;
 
+  window.goScroll(y);
+}
+
+window.goScroll = function (y) {
   if(isIE()){
     document.documentElement.scrollTop = y;
   }else{
@@ -320,3 +324,13 @@ window.setMaxHeight = function(){
     }
   }
 }
+
+document.addEventListener("scroll", onScrollHandler);
+
+function onScrollHandler()
+{
+    if(document.documentElement.scrollTop >= 10)
+      document.querySelector('.go-top').style.display = "inline-block";
+    else
+      document.querySelector('.go-top').style.display = "none";
+};
