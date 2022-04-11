@@ -28,13 +28,58 @@ body {
 }
 
 .navbar > .container-fluid{
-	justify-content: left;
+	justify-content: flex-start;
 	padding: 0;
 }
 
 .navbar > .container-fluid > .button-container{
 	padding-top: 10px;
 	height: 44.5px;
+}
+
+.navbar > .container-fluid > .language-container > a,
+.navbar > .container-fluid > .language-container > a:hover,
+.navbar > .container-fluid > .language-container > a:active,
+.navbar > .container-fluid > .language-container > a:focus{
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.navbar > .container-fluid > .language-container > ul.dropdown-menu{
+  left: auto;
+  right: 0;
+  top: 34px;
+}
+
+.navbar > .container-fluid > .language-container > ul.dropdown-menu > li > a{
+  font-size: 12px;
+}
+
+@media (max-width: 767.98px) {
+  .navbar > .container-fluid > .search-container{
+    order: 1;
+  }
+
+	.navbar > .container-fluid > .language-container{
+    margin-left: auto;
+    order: 0;
+  }
+}
+
+@media (min-width:768px) {
+  .navbar > .container-fluid > .search-container{    
+    order: 0;
+  }
+
+	.navbar > .container-fluid > .language-container{
+    margin-left: auto;
+    order: 1;
+  }
+
+  .navbar > .container-fluid > .navbar-collapse{
+    order: 2;
+  }
 }
 
 .navbar > .container-fluid .menu-blue{
